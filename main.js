@@ -1,14 +1,17 @@
-
-var date = moment().format('LLLL');
-var time = moment('09 00 a').moment().format('LT');
-
-console.log(date);
+var yes = moment();
+var date = moment().format('LLL');
 
 $(document).ready(function() {
 
 var current = document.getElementById("currentDay");
+
     current.innerText = date;
 
-$("#nine").innerText = time;
+function changeLook() {
+
+}
+
+
+console.log(time);
 
 });
