@@ -120,7 +120,15 @@
     current.innerText = dateFor;
 
     $(function(){
+        let dateFor = moment().format('LT');
+        console.log(dateFor);
         $(".background").css("background-color", "grey");
+        if ($(".nine") == dateFor) {
+            $(".background").css("background-color", "red");
+        } else if ($(".nine") > dateFor) {
+            $(".background").css("background-color", "green");
+
+        }
     })
 </script>
 
