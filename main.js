@@ -1,17 +1,22 @@
-var yes = moment();
-var date = moment().format('LLL');
 
 $(document).ready(function() {
 
-var current = document.getElementById("currentDay");
+    var dateFor = moment().format('LLL');
+    var current = document.getElementById("currentDay");
+    current.innerText = dateFor;
+    var futureHour = dateFor +1;
+    var pastHour = dateFor - 1; 
 
-    current.innerText = date;
+    $(".hour").each(function(){
+    var currentHour2 = querySelect("hour" + i);
 
-function changeLook() {
-
-}
-
-
-console.log(time);
+    if (currentHour === currenHour2) {
+        $(".hour").css("background-color", "green");
+    } else if (nine.dataset.time == currentTime) {
+        $(".hour").css("background-color", "red");
+    } else if (nine.dataset.time < currentTime) {
+        $(".hour").css("background-color", "gray");
+    }
+    });
 
 });
