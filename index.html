@@ -22,8 +22,8 @@
   <div class="container">
     <table class="table">
         <tr>
-            <td scope="row" class="hour" >9:00 AM</td>        
-                <td ><textarea></textarea>                
+            <td scope="row" class="nine" data-time="9">9:00 AM</td>        
+                <td class="background"><textarea></textarea>                
                     <p id="display"></p>
                 </td>
                 <td id="save"><button type="button" onclick="" class="saveBtn">
@@ -32,8 +32,8 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour" >10:00 AM</td>        
-                <td id="background"><textarea></textarea>
+            <td scope="row" class="ten" data-time="10">10:00 AM</td>        
+                <td class="background"><textarea></textarea>
                 <p id="display"></p>
                 </td>
 
@@ -43,8 +43,8 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour" >11:00 AM</td>        
-                <td id="background" class=><textarea></textarea><p id="display"></p>
+            <td scope="row" class="eleven" data-time="11">11:00 AM</td>        
+                <td class="background" class=><textarea></textarea><p id="display"></p>
                 </td>
 
                 <td id="save"><button type="button" onclick="" class="saveBtn">                
@@ -53,8 +53,8 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour" >12:00 PM</td>        
-                <td ><textarea></textarea></td>
+            <td scope="row" class="twelve" data-time="12">12:00 PM</td>        
+                <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="button" onclick="" class="saveBtn">                 
                      <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -62,8 +62,8 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour" >1:00 PM</td>        
-                <td ><textarea></textarea></td>
+            <td scope="row" class="one" data-time="13">1:00 PM</td>        
+                <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="button" onclick="" class="saveBtn">                
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -72,8 +72,8 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour" >2:00 PM</td>        
-                <td ><textarea></textarea></td>
+            <td scope="row" class="two" data-time="14">2:00 PM</td>        
+                <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="button" onclick="" class="saveBtn">  
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -81,8 +81,8 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour" >3:00 PM</td>        
-                <td ><textarea></textarea></td>
+            <td scope="row" class="three" data-time="15">3:00 PM</td>        
+                <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="button" onclick="" class="saveBtn">  
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -90,8 +90,8 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour" >4:00 PM</td>        
-                <td ><textarea></textarea></td>
+            <td scope="row" class="four" data-time="16">4:00 PM</td>        
+                <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="button" onclick="" class="saveBtn">  
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -99,8 +99,8 @@
         </tr>
     
         <tr>
-            <td scope="row" class="hour" >5:00 PM</td>        
-                <td ><textarea></textarea></td>
+            <td scope="row" class="five" data-set="17">5:00 PM</td>        
+                <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="button" onclick="" class="saveBtn"> 
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -113,7 +113,16 @@
   </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="main.js"></script>
+
+<script>
+    var dateFor = moment().format('LLL');
+    var current = document.getElementById("currentDay");
+    current.innerText = dateFor;
+
+    $(function(){
+        $(".background").css("background-color", "grey");
+    })
+</script>
 
 </body>
 </html>

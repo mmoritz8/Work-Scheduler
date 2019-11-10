@@ -1,4 +1,5 @@
 
+
 $(document).ready(function() {
 
     var dateFor = moment().format('LLL');
@@ -7,15 +8,19 @@ $(document).ready(function() {
     var futureHour = dateFor +1;
     var pastHour = dateFor - 1; 
 
-    $(".hour").each(function(){
-    var currentHour2 = querySelect("hour" + i);
+    console.log(dateFor);
 
-    if (currentHour === currenHour2) {
-        $(".hour").css("background-color", "green");
+    $(".hour").each(function(){
+    var startHour = moment("0900").format("HH:mm");
+    var currentHour = moment();
+    console.log(currentHour);
+
+    if (currentHour === startHour) {
+        $(".nine").css("background-color", "green");
     } else if (nine.dataset.time == currentTime) {
-        $(".hour").css("background-color", "red");
+        $(".nine").css("background-color", "red");
     } else if (nine.dataset.time < currentTime) {
-        $(".hour").css("background-color", "gray");
+        $(".nine").css("background-color", "gray");
     }
     });
 
