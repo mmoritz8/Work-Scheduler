@@ -25,9 +25,9 @@
         <tr>
             <th scope="row" id="nine" class="hour"></th>        
             <td id="background1">
-                <textarea id="text"></textarea>                
+                <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -38,9 +38,9 @@
         <tr>
             <th scope="row" id="ten" class="hour"></th>        
             <td id="background2">
-                <textarea id="text"></textarea>                
+                <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -51,9 +51,9 @@
         <tr>
             <th scope="row" id="eleven" class="hour"></th>        
             <td id="background3">
-                    <textarea id="text"></textarea>                
+                    <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -64,9 +64,9 @@
         <tr>
             <th scope="row" id="twelve" class="hour"></th>        
             <td id="background4">
-                    <textarea id="text"></textarea>                
+                    <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -77,9 +77,9 @@
         <tr>
             <th scope="row" id="one" class="hour"></th>        
             <td id="background5">
-                <textarea id="text"></textarea>                
+                <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -90,7 +90,7 @@
         <tr>
             <th scope="row" id="two" class="hour"></th>        
             <td id="background6">
-                <textarea id="text"></textarea>                
+                <textarea class="text"></textarea>                
             </td>
             <td id="displayText"></td>
             <td id="save">
@@ -103,9 +103,9 @@
         <tr>
             <td scope="row" id="three" class="hour"></td>        
             <td id="background7">
-                <textarea id="text"></textarea>                
+                <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -116,9 +116,9 @@
         <tr>
             <th scope="row" id="four" class="hour"></th>        
             <td id="background8">
-                <textarea id="text"></textarea>                
+                <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -129,9 +129,9 @@
         <tr>
             <th scope="row" id="five" class="hour"></th>        
             <td id="background9">
-                <textarea id="text"></textarea>                
+                <textarea class="text"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td class="displayText"></td>
             <td id="save">
                 <button type="submit"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
@@ -153,6 +153,20 @@
     var n = moment().format('LTS');
     var current = document.getElementById("currentDay");
     current.innerText = m;
+
+
+    $('.saveBtn').on('click', function(event){
+        var button = document.getElementsByClassName("saveBtn");
+        var txtDisplay = document.getElementsByClassName('displayText');
+        var txtInput = document.getElementsByClassName('text');
+        var txt = txtInput.val();
+        if (txt = "") {
+            alert('Please input something to save.');
+        } else {
+            $(txtDisplay).append(txt);
+        }
+
+    })
 
     $('td#nine').data('time', 9);
     $('td#ten').data('time', 10);
