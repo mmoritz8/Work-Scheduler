@@ -31,7 +31,7 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">10:00</td>        
                 <td class="background"><textarea></textarea>
                 <p id="display"></p>
                 </td>
@@ -42,7 +42,7 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">11:00</td>        
                 <td class="background" class=><textarea></textarea><p id="display"></p>
                 </td>
 
@@ -52,7 +52,7 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">12:00</td>        
                 <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="submit"  class="saveBtn">                 
@@ -61,7 +61,7 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">1:00</td>        
                 <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="submit"  class="saveBtn">                
@@ -71,7 +71,7 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">2:00</td>        
                 <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="submit"  class="saveBtn">  
@@ -80,7 +80,7 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">3:00</td>        
                 <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="submit"  class="saveBtn">  
@@ -89,7 +89,7 @@
         </tr>
 
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">4:00</td>        
                 <td class="background"><textarea></textarea></td>
 
                 <td id="save"><button type="submit"  class="saveBtn">  
@@ -98,7 +98,7 @@
         </tr>
     
         <tr>
-            <td scope="row" class="hour"></td>        
+            <td scope="row" class="hour">5:00</td>        
                 <td class="background">
                     <textarea></textarea></td>
 
@@ -119,6 +119,14 @@
     var m = moment().format('LLL');
     var current = document.getElementById("currentDay");
     current.innerText = m;
+
+    $('button').on('submit', function(event){
+        if ($('textarea') !== "") {
+            var inputText = $.trim$('textarea').val();
+            $('.background').append(inputText);
+        }
+
+    })
 
    
 // set up
