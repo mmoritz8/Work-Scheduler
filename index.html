@@ -25,11 +25,11 @@
         <tr>
             <th scope="row" id="nine" class="hour"></th>        
             <td id="background1">
-                <textarea class="text"></textarea>                
+                <textarea id="text1"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText1"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button" id="save1"   class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -38,11 +38,11 @@
         <tr>
             <th scope="row" id="ten" class="hour"></th>        
             <td id="background2">
-                <textarea class="text"></textarea>                
+                <textarea id="text2"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText2"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button" id="save2"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -51,11 +51,11 @@
         <tr>
             <th scope="row" id="eleven" class="hour"></th>        
             <td id="background3">
-                    <textarea class="text"></textarea>                
+                    <textarea id="text3"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText3"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button" id="save3"   class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -64,11 +64,11 @@
         <tr>
             <th scope="row" id="twelve" class="hour"></th>        
             <td id="background4">
-                    <textarea class="text"></textarea>                
+                    <textarea id="text4"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText4"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button" id="save4"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -77,11 +77,11 @@
         <tr>
             <th scope="row" id="one" class="hour"></th>        
             <td id="background5">
-                <textarea class="text"></textarea>                
+                <textarea id="text5"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText5"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button"  class="saveBtn" id="save5" >
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -90,11 +90,11 @@
         <tr>
             <th scope="row" id="two" class="hour"></th>        
             <td id="background6">
-                <textarea class="text"></textarea>                
+                <textarea id="text6"></textarea>                
             </td>
-            <td id="displayText"></td>
+            <td id="displayText6"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button" id="save6"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -103,11 +103,11 @@
         <tr>
             <td scope="row" id="three" class="hour"></td>        
             <td id="background7">
-                <textarea class="text"></textarea>                
+                <textarea id="text7"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText7"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button"  id="save7" class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -116,11 +116,11 @@
         <tr>
             <th scope="row" id="four" class="hour"></th>        
             <td id="background8">
-                <textarea class="text"></textarea>                
+                <textarea id="text8"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText8"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button" id="save8"  class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -129,11 +129,11 @@
         <tr>
             <th scope="row" id="five" class="hour"></th>        
             <td id="background9">
-                <textarea class="text"></textarea>                
+                <textarea id="text9"></textarea>                
             </td>
-            <td class="displayText"></td>
+            <td id="displayText9"></td>
             <td id="save">
-                <button type="submit"  class="saveBtn">
+                <button type="button"  id="save9" class="saveBtn">
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button>
             </td>
@@ -155,15 +155,13 @@
     current.innerText = m;
 
 
-    $('.saveBtn').on('click', function(event){
-        var button = document.getElementsByClassName("saveBtn");
-        var txtDisplay = document.getElementsByClassName('displayText');
-        var txtInput = document.getElementsByClassName('text');
-        var txt = txtInput.val();
-        if (txt = "") {
+    $('button').on('click', function(event){
+        var txtDisplay = document.getElementById('displayText1');
+        var txtInput = document.getElementById('text1').toString();
+        if (txtInput = "") {
             alert('Please input something to save.');
         } else {
-            $(txtDisplay).append(txt);
+            $(txtDisplay).append(txtInput);
         }
 
     })
