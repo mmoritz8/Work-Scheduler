@@ -22,87 +22,87 @@
   <div class="container">
     <table class="table">
         <tr>
-            <td scope="row" class="nine"><time>9:00</time> AM</td>        
+            <td scope="row" id="nine" class="hour">09:00</td>        
                 <td class="background"><textarea></textarea>                
-                    <p id="display"></p>
                 </td>
-                <td id="save"><button type="submit" onclick="" class="saveBtn">
+                <td id="save"><button type="submit"  class="saveBtn">
                 <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
             </button></td>
         </tr>
 
         <tr>
-            <td scope="row" class="ten"><time>10:00</time> AM</td>        
+            <td scope="row" class="hour"></td>        
                 <td class="background"><textarea></textarea>
                 <p id="display"></p>
                 </td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn">                
+                <td id="save"><button type="submit"  class="saveBtn">                
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button></td>
         </tr>
 
         <tr>
-            <td scope="row" class="eleven"><time>11:00</time> AM</td>        
+            <td scope="row" class="hour"></td>        
                 <td class="background" class=><textarea></textarea><p id="display"></p>
                 </td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn">                
+                <td id="save"><button type="submit"  class="saveBtn">                
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button></td>
         </tr>
 
         <tr>
-            <td scope="row" class="twelve"><time>12:00</time> PM</td>        
+            <td scope="row" class="hour"></td>        
                 <td class="background"><textarea></textarea></td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn">                 
+                <td id="save"><button type="submit"  class="saveBtn">                 
                      <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button></td>
         </tr>
 
         <tr>
-            <td scope="row" class="one"><time>13:00</time> PM</td>        
+            <td scope="row" class="hour"></td>        
                 <td class="background"><textarea></textarea></td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn">                
+                <td id="save"><button type="submit"  class="saveBtn">                
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
   
                 </button></td>
         </tr>
 
         <tr>
-            <td scope="row" class="two"><time>14:00</time> PM</td>        
+            <td scope="row" class="hour"></td>        
                 <td class="background"><textarea></textarea></td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn">  
+                <td id="save"><button type="submit"  class="saveBtn">  
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button></td>
         </tr>
 
         <tr>
-            <td scope="row" class="three"><time>15:00</time> PM</td>        
+            <td scope="row" class="hour"></td>        
                 <td class="background"><textarea></textarea></td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn">  
+                <td id="save"><button type="submit"  class="saveBtn">  
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button></td>
         </tr>
 
         <tr>
-            <td scope="row" class="four"><time>16:00</time> PM</td>        
+            <td scope="row" class="hour"></td>        
                 <td class="background"><textarea></textarea></td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn">  
+                <td id="save"><button type="submit"  class="saveBtn">  
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button></td>
         </tr>
     
         <tr>
-            <td scope="row" class="five"><time>17:00</time> PM</td>        
-                <td class="background"><textarea></textarea></td>
+            <td scope="row" class="hour"></td>        
+                <td class="background">
+                    <textarea></textarea></td>
 
-                <td id="save"><button type="submit" onclick="" class="saveBtn"> 
+                <td id="save"><button type="submit"  class="saveBtn"> 
                     <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
                 </button></td>
         </tr>
@@ -116,27 +116,20 @@
 
 <script>
     $(document).ready(function() {
-    var m = moment().format('L');
+    var m = moment().format('LLL');
     var current = document.getElementById("currentDay");
     current.innerText = m;
 
-    
+   
+// set up
+let start = moment("2019-05-16 09:00:00"); // some random moment in time (in ms)
+let end = moment("2019-05-16 09:59:00"); // some random moment after start (in ms)
+let diff = end.diff(start);
 
-    $('time').each(function(){
-        let m = moment(0900).format('LT');
-        $('time').empty();
-        var timeSlot = $('time');
-            timeSlot = "";
+// execution
+let f = moment.utc(diff).format("HH:mm:ss.SSS");
+alert(f);
 
-
-        if (timeSlot == "") {
-            var current1 = moment().add(1, 'hour');
-            timeSlot = m;
-           
-        } else {
-            timeSlot = current1;
-    }
-        })
 
         console.log(m);
         if (m == $('time')) {
