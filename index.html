@@ -115,30 +115,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 <script>
-    var dateFor = moment().format('LLL');
+    var m = moment().format('LT');
     var current = document.getElementById("currentDay");
-    current.innerText = dateFor;
+    current.innerText = m;
 
-    var currentTime = date.format("HH")
-$(".nine").attr('data-time', 9);
-$(".ten").attr('data-time', 10);
-$(".eleven").attr('data-time', 11);
-$(".twelve").attr('data-time', 12);
-$(".one").attr('data-time', 13);
-$(".two").attr('data-time', 14);
-$(".three").attr('data-time', 15);
-$(".four").attr('data-time', 16);
-$(".five").attr('data-time', 17);
+    $('time').each(function(){
+        if (m == $('time')) {
+        $('.background').toggleClass('present');
+    } else if (m > $('time')) {
+        $('.background').toggleClass('past');
+    } else if (m < $('time')) {
+        $('.background').toggleClass('future');
 
-    $(function(){
-        if (nine.dataset.time > currentTime) {
-    $(".9").css("background-color", "green");
-}else if(nine.dataset.time == currentTime) {
-    $(".9").css("background-color", "red");
-} else if (nine.dataset.time < currentTime) {
-    $(".9").css("background-color", "gray");
-}
+    }
+
     })
+   
 </script>
 
 </body>
