@@ -115,11 +115,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 <script>
-    var m = moment().format('LT');
+    $(document).ready(function() {
+    var m = moment().format('L');
     var current = document.getElementById("currentDay");
     current.innerText = m;
 
+    
+
     $('time').each(function(){
+        let m = moment(0900).format('LT');
+        $('time').empty();
+        var timeSlot = $('time');
+            timeSlot = "";
+
+
+        if (timeSlot == "") {
+            var current1 = moment().add(1, 'hour');
+            timeSlot = m;
+           
+        } else {
+            timeSlot = current1;
+    }
+        })
+
+        console.log(m);
         if (m == $('time')) {
         $('.background').toggleClass('present');
     } else if (m > $('time')) {
