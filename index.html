@@ -1,366 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="assets/style.css">
-    
-    <title>Work Day Scheduler</title>
-  </head>
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Work Day Scheduler</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+     <link rel="stylesheet" href="assets/style.css">
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://momentjs.com/downloads/moment.js"></script>
+</head>
+
 <body>
-    
-  <header class="jumbotron">
-    <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-  </header>
-  
-  <div class="container">
 
-    <table class="table">
-        <tr>
-            <th scope="row" id="nine" class="hour"></th>        
-            <td id="background1">
-                <textarea id="text1"></textarea>                
-            </td>
-            <td id="displayText1"></td>
-            <td id="save">
-                <button type="button" id="save1"   class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>        
-        
-        <tr>
-            <th scope="row" id="ten" class="hour"></th>        
-            <td id="background2">
-                <textarea id="text2"></textarea>                
-            </td>
-            <td id="displayText2"></td>
-            <td id="save">
-                <button type="button" id="save2"  class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
+     <header class="jumbotron">
+          <h1 class="display-3">Work Day Scheduler</h1>
+          <p class="lead">A simple calendar app for scheduling your work day</p>
+          <p id="currentDay" class="lead"> </p>
+     </header>
 
-        <tr>
-            <th scope="row" id="eleven" class="hour"></th>        
-            <td id="background3">
-                    <textarea id="text3"></textarea>                
-            </td>
-            <td id="displayText3"></td>
-            <td id="save">
-                <button type="button" id="save3"   class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
-        
-        <tr>
-            <th scope="row" id="twelve" class="hour"></th>        
-            <td id="background4">
-                    <textarea id="text4"></textarea>                
-            </td>
-            <td id="displayText4"></td>
-            <td id="save">
-                <button type="button" id="save4"  class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
+     <div class="container">
+          <table class="table">
+               <thead>
+                    <tr>
+                         <th scope="col">Time</th>
+                         <th scope="col">Input New</th>
+                         <th scope="col">To Do:</th>
+                         <th scope="col">Save</th>
+                    </tr>
+               </thead>
 
-        <tr>
-            <th scope="row" id="one" class="hour"></th>        
-            <td id="background5">
-                <textarea id="text5"></textarea>                
-            </td>
-            <td id="displayText5"></td>
-            <td id="save">
-                <button type="button"  class="saveBtn" id="save5" >
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
+               <tbody>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="nine"> 9:00 AM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="ten"> 10:00 AM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="eleven"> 11:00 AM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="twelve"> 12:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="one"> 1:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
 
-        <tr>
-            <th scope="row" id="two" class="hour"></th>        
-            <td id="background6">
-                <textarea id="text6"></textarea>                
-            </td>
-            <td id="displayText6"></td>
-            <td id="save">
-                <button type="button" id="save6"  class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
-    
-        <tr>
-            <td scope="row" id="three" class="hour"></td>        
-            <td id="background7">
-                <textarea id="text7"></textarea>                
-            </td>
-            <td id="displayText7"></td>
-            <td id="save">
-                <button type="button"  id="save7" class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
-    
-        <tr>
-            <th scope="row" id="four" class="hour"></th>        
-            <td id="background8">
-                <textarea id="text8"></textarea>                
-            </td>
-            <td id="displayText8"></td>
-            <td id="save">
-                <button type="button" id="save8"  class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
-    
-        <tr>
-            <th scope="row" id="five" class="hour"></th>        
-            <td id="background9">
-                <textarea id="text9"></textarea>                
-            </td>
-            <td id="displayText9"></td>
-            <td id="save">
-                <button type="button"  id="save9" class="saveBtn">
-                    <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png">
-                </button>
-            </td>
-        </tr>
-    
-    
-            
-    </table>
-  </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="two"> 2:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
 
-<script>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="three"> 3:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
 
-    $(document).ready(function() {
-    var m = moment().format('LLL');
-    var n = moment().format('LTS');
-    var current = document.getElementById("currentDay");
-    current.innerText = m;
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="four"> 4:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
 
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="five"> 5:00 PM</p>
+                         </th>
+                         <td scope="row"><input class="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
 
-    $('button').on('click', function(event){
-        var txtDisplay = document.getElementById('displayText1');
-        var txtInput = document.getElementById('text1').toString();
-        if (txtInput = "") {
-            alert('Please input something to save.');
-        } else {
-            $(txtDisplay).append(txtInput);
-        }
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="six"> 6:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
 
-    })
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="seven"> 7:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
+                    <tr class="past">
+                         <th scope="row">
+                              <p class='time' id="eight"> 8:00 PM</p>
+                         </th>
+                         <td scope="row"><input id="inputSpot" type="text"></td>
+                         <td>
+                              <p id="toDo"></p>
+                         </td>
+                         <td>
+                              <button type="button" class="saveBtn" onclick="toStorage()">
+                                   <img id="save" src="assets/Apple_classic_10Icon_5px_grid-04-512.png"></button></td>
+                    </tr>
 
-    $('td#nine').data('time', 9);
-    $('td#ten').data('time', 10);
-    $('td#eleven').data('time', 11);
-    $('td#twelve').data('time', 12);
-    $('td#one').data('time', 13);
-    $('td#two').data('time', 14);
-    $('td#three').data('time', 15);
-    $('td#four').data('time', 16);
-    $('td#five').data('time', 17);
-    $('td.background').css('background-color', 'gray');
-
-    const k = moment("900", "hmm").format("HH:mm A");
-    var nine = document.getElementById('nine');
-    nine.innerText = k.toString();
-
-    const h = moment('1000', 'hmm').format('HH:mm A');
-    var ten = document.getElementById('ten');
-    ten.innerHTML = h.toString();
-
-    const b = moment('1100', 'hmm').format('HH:mm A');
-    var eleven = document.getElementById('eleven');
-    eleven.innerHTML = b.toString();
-
-    const c = moment('1200', 'hmm').format('HH:mm A');
-    var twelve = document.getElementById('twelve');
-    twelve.innerHTML = c.toString();
-
-    const d = moment('1300', 'hmm').format('HH:mm A');
-    var one = document.getElementById('one');
-    one.innerHTML = d.toString();
-
-    const e = moment('1400', 'hmm').format('HH:mm A');
-    var two = document.getElementById('two');
-    two.innerHTML = e.toString();
-
-    const f = moment('1500', 'hmm').format('HH:mm A');
-    var three = document.getElementById('three');
-    three.innerHTML = f.toString();
-
-    const g = moment('1600', 'hmm').format('HH:mm A');
-    var four = document.getElementById('four');
-    four.innerHTML = g.toString();
-
-    const a = moment('1700', 'hmm').format('HH:mm A');
-    var five = document.getElementById('five');
-    five.innerHTML = a.toString();
-
-        var now = moment().get('hour'); 
-        var hour = now.toString();
-        console.log(hour);
-
-        var changeC = document.getElementById('background1');
-        
-        if (hour == 9) {
-            $(changeC).css("background-color", 'red');
-       
-        } else if (hour > 9) {
-            $(changeC).css('background-color', 'gray');
-        
-        } else if (hour < 9) {
-            $(changeC).css('background-color', 'green');
-
-        }
-
-        var changeC2 = document.getElementById('background2');
-        
-        if (hour == 10) {
-            $(changeC2).css("background-color", 'red');
-       
-        } else if (hour > 10) {
-            $(changeC2).css('background-color', 'gray');
-        
-        } else if (hour < 10) {
-            $(changeC2).css('background-color', 'green');
-
-        }
-
-        var changeC3 = document.getElementById('background3');
-        
-        if (hour == 11) {
-            $(changeC3).css("background-color", 'red');
-       
-        } else if (hour > 11) {
-            $(changeC3).css('background-color', 'gray');
-        
-        } else if (hour < 11) {
-            $(changeC3).css('background-color', 'green');
-
-        }
-
-        var changeC4 = document.getElementById('background4');
-        
-        if (hour == 12) {
-            $(changeC4).css("background-color", 'red');
-       
-        } else if (hour > 12) {
-            $(changeC4).css('background-color', 'gray');
-        
-        } else if (hour < 12) {
-            $(changeC4).css('background-color', 'green');
-
-        }
-
-        var changeC5 = document.getElementById('background5');
-        
-        if (hour == 13) {
-            $(changeC5).css("background-color", 'red');
-       
-        } else if (hour > 13) {
-            $(changeC5).css('background-color', 'gray');
-        
-        } else if (hour < 13) {
-            $(changeC5).css('background-color', 'green');
-
-        }
-
-        var changeC6 = document.getElementById('background6');
-        
-        if (hour == 14) {
-            $(changeC6).css("background-color", 'red');
-       
-        } else if (hour > 14) {
-            $(changeC6).css('background-color', 'gray');
-        
-        } else if (hour < 14) {
-            $(changeC6).css('background-color', 'green');
-
-        }
-
-        var changeC7 = document.getElementById('background7');
-        
-        if (hour == 15) {
-            $(changeC7).css("background-color", 'red');
-       
-        } else if (hour > 15) {
-            $(changeC7).css('background-color', 'gray');
-        
-        } else if (hour < 15) {
-            $(changeC7).css('background-color', 'green');
-
-        }
-
-        var changeC8 = document.getElementById('background8');
-        
-        if (hour == 16) {
-            $(changeC8).css("background-color", 'red');
-       
-        } else if (hour > 16) {
-            $(changeC8).css('background-color', 'gray');
-        
-        } else if (hour < 16) {
-            $(changeC8).css('background-color', 'green');
-
-        }
-
-        var changeC9 = document.getElementById('background9');
-        
-        if (hour == 17) {
-            $(changeC9).css("background-color", 'red');
-       
-        } else if (hour > 17) {
-            $(changeC9).css('background-color', 'gray');
-        
-        } else if (hour < 17) {
-            $(changeC9).css('background-color', 'green');
-
-        }
-    });     
-
-    
+               </tbody>
+          </table>
+     </div>
 
 
-   
-// set up
-// let start = moment("2019-05-16 09:00:00"); // some random moment in time (in ms)
-// let end = moment("2019-05-16 09:59:00"); // some random moment after start (in ms)
-// let diff = end.diff(start);
-
-// execution
-// let f = moment.utc(diff).format("HH:mm:ss.SSS");
-// alert(f);
-
-
-    //     console.log(m);
-    //     if (m == $('time')) {
-    //     $('.background').toggleClass('present');
-    // } else if (m > $('time')) {
-    //     $('.background').toggleClass('past');
-    // } else if (m < $('time')) {
-    //     $('.background').toggleClass('future');
-
-    // }
-
-   
-</script>
-
+     <script src="main.js"></script>
 </body>
+
 </html>
